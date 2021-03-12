@@ -10,6 +10,17 @@
       "StackName": "amplify-crosstheball-dev-101002",
       "StackId": "arn:aws:cloudformation:us-east-1:494068580293:stack/amplify-crosstheball-dev-101002/0b752220-8345-11eb-87f0-0a23b021aa67",
       "AmplifyAppId": "d2h4xll6n3726m"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d2h4xll6n3726m",
+          "type": "cicd"
+        }
+      },
+      "auth": {
+        "crosstheball3cb8a0a8": {}
+      }
     }
   }
 }
