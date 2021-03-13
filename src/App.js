@@ -1,27 +1,47 @@
-import logo from './logo.svg';
 import './App.css';
 
 
 import { withAuthenticator } from 'aws-amplify-react';
-import '@aws-amplify/ui/dist/style.css';
+
+
+import { DataStore } from '@aws-amplify/datastore';
+import { Post } from './models';
+import { useEffect, useState } from 'react';
 
 function App() {
+const [post, setPost] = useState([]);
+
+useEffect(() => {
+  const func = async () => {
+    const models = await DataStore.query(Post);
+    setPost(models)
+  }
+
+  func()
+}, [])
+
+  const createPost = async () => {
+    const post = {
+      title: window.prompt('blog post title'),
+      content: window.prompt('blog post content')
+    }
+
+    const newPost = await DataStore.save(
+      new Post(post)
+    );
+  }
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={createPost}>Create a Post</button>
+      {post.map(post => <div key={post.id}>
+        <h1>{post.title}</h1>
+        <p>{post.content}</p>
+      </div>
+      )}
+      
     </div>
   );
 }
