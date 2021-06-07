@@ -1,3 +1,10 @@
+type Event @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  description: String
+  date: String
+  time: String
+}
+
 type Comment @model @auth(rules: [{allow: public}]) @key(name: "byPost", fields: ["postID"]) {
   id: ID!
   text: String!
@@ -11,3 +18,4 @@ type Post @model @auth(rules: [{allow: public}]) {
   content: String!
   comments: [Comment] @connection(keyName: "byPost", fields: ["id"])
 }
+ 
