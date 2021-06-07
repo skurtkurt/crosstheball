@@ -11,6 +11,8 @@ import { useEffect, useState } from 'react';
 function App() {
 const [post, setPost] = useState([]);
 
+document.write("testing");
+
 useEffect(() => {
   const func = async () => {
     const models = await DataStore.query(Post);
