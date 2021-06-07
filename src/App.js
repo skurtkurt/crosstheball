@@ -42,9 +42,11 @@ useEffect(() => {
         <p>{post.content}</p>
       </div>
       )}
-      
     </div>
   );
+
+
+
 }
 
 export default withAuthenticator(App, true);
