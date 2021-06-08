@@ -21,9 +21,7 @@ const renderCalendar = () => {
 
   const lastDayIndex = new Date(
     date.getFullYear(),
-    date.getMonth() + 1,
-    0
-  ).getDay();
+    date.getMonth() + 1,0).getDay();
 
   const nextDays = 7 - lastDayIndex - 1;
 
@@ -82,7 +80,7 @@ document.querySelector(".next").addEventListener("click", () => {
 
 document.querySelector(".days").addEventListener("click", () => {
 
-window.open('../templates/addfood.html');
+window.open("addEvent.html");
 })
 
 renderCalendar();
