@@ -5,7 +5,7 @@ import { withAuthenticator } from 'aws-amplify-react';
 
 
 import { DataStore } from '@aws-amplify/datastore';
-import { Post } from './models';
+import { Post } from '../src/models';
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -31,6 +31,7 @@ useEffect(() => {
       new Post(post)
     );
   }
+
 
 
 
