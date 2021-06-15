@@ -1,6 +1,7 @@
 {
   "name": "crosstheball",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "dependencies": {
     "@fullcalendar/daygrid": "^5.7.2",
@@ -39,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "es-dev-server": "^2.1.0"
   }
 }
